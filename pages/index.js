@@ -20,7 +20,7 @@ export default function Index() {
       <TextHeader />
       <Flex height="100vh" alignItems="center" justify="center">
         <Flex
-          mt={-350}
+          mt={-100}
           direction="column"
           background={formBackground}
           p={12}
@@ -44,7 +44,7 @@ export default function Index() {
   ) : (
     <>
       <TextHeader />
-      <Flex mt={-200} height="100vh" alignItems="center" justify="center">
+      <Flex mt={-100} height="100vh" alignItems="center" justify="center">
         <Flex direction="column" background={formBackground} p={12} rounded={6}>
           <Heading align="center" mb={6}>
             Log In
