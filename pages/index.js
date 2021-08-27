@@ -97,7 +97,7 @@ export default function Index() {
         </Text>
         <Text>
           I made one just connected to{" "}
-          <Link color="blue.200" href="https://supabase.io/" isExternal>
+          <Link color="blue.200" href="https://social-oauth.vercel.app/" isExternal>
             Supabase <ExternalLinkIcon mx="2px" />
           </Link>
         </Text>
