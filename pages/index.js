@@ -7,13 +7,19 @@ import {
   Text,
   useColorMode,
   useColorModeValue,
+  Link,
+  Icon,
 } from "@chakra-ui/react";
-import { FaGoogle, FaGithub } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { FcGoogle, FcPicture, FcFolder } from "react-icons/fc";
+import { VscUnlock } from "react-icons/vsc";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
 
 export default function Index() {
   const auth = useAuth();
   const { toggleColorMode } = useColorMode();
   const formBackground = useColorModeValue("gray.100", "gray.700");
+  const colorMode = useColorModeValue("blue.100", "blue.700");
 
   return auth.user ? (
     <>
@@ -33,11 +39,14 @@ export default function Index() {
             mb={3}
             colorScheme="teal"
             align="center"
+            leftIcon={<VscUnlock />}
             onClick={() => auth.signout()}
           >
             Sign Out
           </Button>
-          <Button onClick={toggleColorMode}>Color Mode</Button>
+          <Button leftIcon={<FcPicture />} onClick={toggleColorMode}>
+            Color Mode
+          </Button>
         </Flex>
       </Flex>
     </>
@@ -61,14 +70,37 @@ export default function Index() {
           <Button
             mb={3}
             colorScheme="teal"
-            leftIcon={<FaGoogle />}
+            leftIcon={<FcGoogle />}
             align="center"
             onClick={(e) => auth.signinWithGoogle()}
           >
             Sign In
           </Button>
-          <Button onClick={toggleColorMode}>Color Mode</Button>
+          <Button
+            background={colorMode}
+            leftIcon={<FcPicture />}
+            onClick={toggleColorMode}
+          >
+            Color Mode
+          </Button>
         </Flex>
+      </Flex>
+      <Flex mt={-200} direction="column" textAlign="center">
+        <Text>
+          <Link
+            color="blue.200"
+            href="https://github.com/IvanMJs/imei"
+            isExternal
+          >
+            <Icon mt={-1} as={FcFolder} /> Repo
+          </Link>
+        </Text>
+        <Text>
+          I made one just connected to{" "}
+          <Link color="blue.200" href="https://supabase.io/" isExternal>
+            Supabase <ExternalLinkIcon mx="2px" />
+          </Link>
+        </Text>
       </Flex>
     </>
   );
