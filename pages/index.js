@@ -53,7 +53,13 @@ export default function Index() {
   ) : (
     <>
       <TextHeader />
-      <Flex mt={-100} height="100vh" alignItems="center" justify="center">
+      <Flex
+        display="flex"
+        height="100vh"
+        alignItems="center"
+        justify="center"
+        maxHeight="60vh"
+      >
         <Flex direction="column" background={formBackground} p={12} rounded={6}>
           <Heading align="center" mb={6}>
             Log In
@@ -85,7 +91,7 @@ export default function Index() {
           </Button>
         </Flex>
       </Flex>
-      <Flex mt={-200} direction="column" textAlign="center">
+      <Flex direction="column" textAlign="center" display="flex">
         <Text>
           <Link
             color="blue.200"
@@ -97,7 +103,11 @@ export default function Index() {
         </Text>
         <Text>
           I made one just connected to{" "}
-          <Link color="blue.200" href="https://social-oauth.vercel.app/" isExternal>
+          <Link
+            color="blue.200"
+            href="https://social-oauth.vercel.app/"
+            isExternal
+          >
             Supabase <ExternalLinkIcon mx="2px" />
           </Link>
         </Text>
